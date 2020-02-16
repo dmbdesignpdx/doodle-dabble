@@ -1,0 +1,62 @@
+//  Main
+
+main {
+   margin-top: 269px;
+
+   .main & {
+      margin-top: 0
+   }
+
+   .light & {
+      background: style(_light, _bkg)
+   }
+
+   p {
+      width: 60%;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(100%);
+      
+   
+      .main & {
+         opacity: 1;
+         transform: translateY(0);
+         transition: transform 0.6s
+      }
+   }
+
+   button {
+      @include size(18px);
+      padding: 16px;
+      box-sizing: content-box;
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      opacity: 0;
+      background: none;
+      cursor: pointer;
+      transform: opacity 0.6s;
+
+      .main & {
+         opacity: 1
+      }
+
+      svg {
+         @include size(100%);
+         overflow: visible;
+         fill: none;
+         stroke: style(_dark, _cont);
+         stroke-width: 1;
+         stroke-linecap: round;
+         stroke-linejoin: round;
+
+         .light & {
+            stroke: style(_light, _cont)
+         }
+      }
+   }
+}
+
+
+//  Projects
+

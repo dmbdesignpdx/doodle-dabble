@@ -1,0 +1,74 @@
+#nav {
+   width: 240px;
+   height: 100vh;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 98;
+   background: style(_dark, _comp);
+   box-shadow: 1px 0 3px ts(0.6);
+   transition: 0s;
+   transform: translateX(-101%);
+
+   .main & {
+      transition: transform 0.6s;
+      transform: translateX(0);
+   }
+
+   .main.navHide & {
+      transform: translateX(-101%);
+   }
+
+   .light & {
+      box-shadow: 1px 0 3px ts(0.1);
+      background: style(_light, _comp);
+   }
+
+   a {
+      display: block;
+      width: 100%;
+      padding: 24px;
+
+      &:hover {
+         background: style(_dark, _hover_bkg);
+      }
+
+      .light &:hover {
+         background: style(_light, _hover_bkg);
+      }
+   }
+
+   button {
+      @include size(18px);
+      padding: 16px;
+      margin: 8px;
+      box-sizing: content-box;
+      background: none;
+      cursor: pointer;
+
+      svg {
+         @include size(100%);
+         overflow: visible;
+         fill: none;
+         stroke: style(_dark, _cont);
+         stroke-width: 1;
+         stroke-linecap: round;
+         stroke-linejoin: round;
+
+         .light & {
+            stroke: style(_light, _cont)
+         }
+      }
+   }
+
+   #home {
+
+      svg {
+         fill: none;
+         stroke: $green;
+         stroke-linecap: round;
+         stroke-linejoin: round;
+         stroke-width: 28;
+      }
+   }
+}

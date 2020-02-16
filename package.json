@@ -1,0 +1,35 @@
+{
+  "name": "doodledabble",
+  "version": "1.0.0",
+  "description": "App testing.",
+  "author": "dmbdesignpdx",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@nuxtjs/dotenv": "^1.4.0",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^2.0.0",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "@vue/test-utils": "^1.0.0-beta.27",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.1.0",
+    "eslint": "^6.1.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "jest": "^24.1.0",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2",
+    "turntable-kit": "^0.7.1",
+    "vue-jest": "^4.0.0-0"
+  }
+}

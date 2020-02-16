@@ -1,0 +1,53 @@
+#footer {
+   @include size(100% auto);
+   display: flex;
+   align-items: center;
+   padding: 0.9em 24px;
+   font-size: 0.7rem;
+   background: style(_dark, _foot);
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   z-index: 99;
+   line-height: 1;
+
+   .light & {
+      background: style(_light, _foot);
+   }
+
+   * {
+      line-height: 1
+   }
+
+   p, p a:not(:first-of-type) {
+      margin-left: 0.5em
+   }
+
+   label {
+      display: inline-flex;
+      align-items: center;
+      margin-left: auto;
+      cursor: pointer;
+
+      &:hover {
+         opacity: 0.8
+      }
+
+      span {
+         margin-right: 0.4em
+      }
+   }
+
+   input {
+      width: 18px;
+      height: 18px;
+      background: $darker;
+      border-radius: 50%;
+      cursor: inherit;
+      border: 1px solid $green;
+      
+      .light & {
+         background: $light;
+      }
+   }
+}

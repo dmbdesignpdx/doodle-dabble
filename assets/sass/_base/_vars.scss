@@ -1,0 +1,95 @@
+$green: #15dd90;
+$light: #f7f8f9;
+$gray: #6b7b8a;
+$dark: #292e34;
+$darker: #1c2024;
+$offwhite: #f3f4f6;
+$lightgray: #c5c5ca;
+
+$style: (
+   _dark: (
+      _link: $green,
+      _text: $offwhite,
+      _bkg: $dark,
+      _comp: $darker,
+      _foot: lighten($dark, 5),
+      _cont: $offwhite,
+      _hover_bkg: lighten($dark, 1)
+   ),
+   _light: (
+      _link: $green,
+      _text: $dark,
+      _bkg: $offwhite,
+      _comp: $light,
+      _foot: darken($offwhite, 4),
+      _cont: $dark,
+      _hover_bkg: darken($offwhite, 1)
+   )
+);
+
+@function style($theme, $context) {
+   @return map-get(map-get($style, $theme), $context);
+}
+
+$gutter: (
+	p: 18px,
+	t: 24px,
+   d: 30px
+);
+
+@function gutter($arg) {
+   @return map-get($gutter,$arg);
+}
+
+
+@mixin phoneLan {
+	@media (min-width:540px) {
+		@content;
+	}
+}
+
+@mixin tabletPor {
+	@media (min-width:766px) {
+		@content;
+	}
+}
+
+@mixin tabletLan {
+	@media (min-width:1022px) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width:1278px) {
+		@content;
+	}
+}
+
+@mixin desktopLG {
+	@media (min-width:1680px) {
+		@content;
+	}
+}
+
+@mixin gutter($args...) {
+	@for $i from 1 through 3 {
+		@if $i == 1 {
+			@each $arg in $args {
+				#{$arg}: 16px
+			}
+		} @else if $i == 2 {
+			@include tabletPor {
+				@each $arg in $args {
+					#{$arg}: 24px
+				}
+			}
+		} @else {
+			@include desktop {
+				@each $arg in $args {
+					#{$arg}: 30px
+				}
+			}
+		}
+	}
+}

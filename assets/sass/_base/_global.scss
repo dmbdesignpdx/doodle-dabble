@@ -1,0 +1,93 @@
+*::before, *::after {
+   box-sizing: border-box
+}
+
+h1, h2, h3, h4, h5, h6, p, hr, figure, blockquote, summary, ol, ul, dl, dd, pre, textarea, button, fieldset, input, select, legend {
+   padding: 0;
+   margin: 0;
+   border: 0
+}
+
+input, select, textarea, button, progress, meter {
+   -moz-appearance: none;
+   -webkit-appearance: none;
+   appearance: none
+}
+
+h1, h2, h3, h5, h6, button {
+   font: inherit
+}
+
+video, img, object, svg {
+   display: block
+}
+
+ol, ul {
+   list-style: none
+}
+
+li::before {
+   display: block;
+   content: "\200C";
+   font-size: 0
+}
+
+a, abbr {
+   text-decoration: none;
+   color: inherit
+}
+
+address {
+   font-style: normal
+}
+
+textarea {
+   resize: none
+}
+
+.nobr {
+   white-space: nowrap
+}
+
+p {
+   line-height: 1.5
+}
+
+p span, footer, a {
+   font-weight: 700
+}
+
+a {
+   color: $green;
+
+   &:hover {
+      opacity: 0.85
+   }
+}
+
+main p a {
+   text-decoration: underline
+}
+
+button, input, select {
+   outline: 0
+}
+
+main {
+   display: flex;
+   position: relative;
+   padding-left: 210px;
+   transition: padding-left 0.6s;
+
+   .navHide & {
+      padding-left: 0
+   }
+}
+
+#nuxt-base {
+   color: style(_dark, _text);
+
+   &.light {
+      color: style(_light, _text);
+   }
+}
